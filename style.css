@@ -1,0 +1,140 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+  .Logo {
+    font-size: 1.3em;
+    padding: 8px;
+   
+  }
+  .Logo a {
+     text-decoration: none;
+  }
+  .NavBar, .subMenuNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .NavBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navBarItem {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    display: none;
+    order:3;
+  }
+  
+  .navBarItem a {
+    display: block;
+    padding: 10px 5px;
+    text-decoration: none;
+  }
+  
+  .navBarItem a:hover {
+   background-color: black;
+   color: white; 
+  }
+  
+  .toggle {
+    font-size: 1.2em;
+    padding:10px;
+    order:1;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .subarrow > a::after {
+    content: "\2B65";
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .aside, .article {
+    flex: 0 0 20vw
+    
+  }
+  .article{
+    order: 1;
+    background-color: blue;
+  }
+  .aside {
+     order: 2;
+    background-color: purple;
+  }
+  .conteudo {
+    background-color: yellow;
+    flex:1;
+    order:0;
+  }
+  .active .navBarItem {
+    display: block;
+  }
+  
+  .footer{
+    height: 200px;
+  }
+  .header, footer {
+    background-color: #429ade;
+  }
+  .subMenuNav {
+    display: none;
+  }
+  .subactive .subMenuNav {
+    display: block;
+    
+  }
+  
+  @media all and (min-width: 600px){
+    main {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+    }
+    .footer {
+      background-color: red;
+    }
+    .navBarItem {
+      position: relative;
+      display:block;
+      
+      min-width: 120px;
+    }
+    .subactive .subMenuNav {
+      display: block;
+      position: absolute;
+      left: 10px;
+      top:50px;
+      min-width: 120px;
+      text-align: left;
+    }
+    .NavBar {
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+    .toggle {
+     display: none;
+      flex:1;
+      text-align: right;
+    }
+    .Logo {
+      flex:1;
+    }
+    
+  }
